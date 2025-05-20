@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <title>我的 LINE 名片</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+  <style>
+    body { font-family: sans-serif; text-align: center; padding: 20px; }
+    .profile { border-radius: 50%; width: 120px; }
+    .btn { background: #06c755; color: white; padding: 10px 20px; font-size: 16px; border: none; border-radius: 4px; margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <h1>我是 Kurt Wang</h1>
+  <img class="profile" src="https://yourdomain.com/avatar.jpg" alt="Kurt 頭像">
+  <p>資深工程師 | 台灣</p>
+
+  <button class="btn" id="shareBtn">分享給好友</button>
+
+  <script>
+    liff.init({ liffId: "YOUR_LIFF_ID" })
+      .then(() => {
+        document.getElementById('shareBtn').addEventListener('click', () => {
+          liff.shareTargetPicker([
+            {
+              type: "text",
+              text: "這是我的 LINE 數位名片：https://liff.line.me/2007344981-yXozKWX0"
+            }
+          ]).catch(err => {
+            alert('分享失敗: ' + err);
+          });
+        });
+      })
+      .catch(err => {
+        alert('LIFF 初始化失敗: ' + err);
+      });
+  </script>
+</body>
+</html>
