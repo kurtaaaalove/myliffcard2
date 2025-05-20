@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
@@ -14,7 +15,8 @@
 </head>
 <body>
   <h1>我是 Kurt Wang</h1>
-  <img class="profile" src="https://yourdomain.com/avatar.jpg" alt="Kurt 頭像"> <p>資深工程師 | 台灣</p>
+  <img class="profile" src="https://yourdomain.com/avatar.jpg" alt="Kurt 頭像">
+  <p>資深工程師 | 台灣</p>
 
   <button class="btn" id="shareBtn" disabled>分享給好友</button>
 
@@ -24,25 +26,66 @@
         await liff.init({ liffId: "2007344981-yXozKWX0" });
 
         if (!liff.isLoggedIn()) {
-          // 如果使用者未登入，引導他們登入
-          // liff.login() 會重新導向到 LINE 登入頁面，
-          // 登入成功後會再導回此頁面。
-          // 導回後，liff.init() 會再次執行。
           alert('您需要登入 LINE 才能分享名片。將導向登入頁面。');
-          liff.login({ redirectUri: window.location.href }); // redirectUri 確保登入後返回當前頁面
-          // 在 liff.login() 之後，此函數的執行通常會因頁面跳轉而停止
+          liff.login({ redirectUri: window.location.href });
           return;
         }
 
-        // 使用者已登入，可以啟用分享按鈕並設定事件監聽器
         const shareBtn = document.getElementById('shareBtn');
-        shareBtn.disabled = false; // 啟用按鈕
+        shareBtn.disabled = false;
 
         shareBtn.addEventListener('click', () => {
           liff.shareTargetPicker([
             {
-              type: "text",
-              text: "這是我的 LINE 數位名片：https://liff.line.me/2007344981-yXozKWX0"
+              type: "flex",
+              altText: "這是我的 LINE 名片",
+              contents: {
+                type: "bubble",
+                hero: {
+                  type: "image",
+                  url: "https://yourdomain.com/avatar.jpg",
+                  size: "full",
+                  aspectRatio: "1:1",
+                  aspectMode: "cover"
+                },
+                body: {
+                  type: "box",
+                  layout: "vertical",
+                  spacing: "md",
+                  contents: [
+                    {
+                      type: "text",
+                      text: "Kurt Wang",
+                      weight: "bold",
+                      size: "xl",
+                      wrap: true
+                    },
+                    {
+                      type: "text",
+                      text: "資深工程師 | 台灣",
+                      size: "sm",
+                      color: "#888888",
+                      wrap: true
+                    }
+                  ]
+                },
+                footer: {
+                  type: "box",
+                  layout: "vertical",
+                  spacing: "sm",
+                  contents: [
+                    {
+                      type: "button",
+                      style: "primary",
+                      action: {
+                        type: "uri",
+                        label: "查看名片",
+                        uri: "https://liff.line.me/2007344981-yXozKWX0"
+                      }
+                    }
+                  ]
+                }
+              }
             }
           ]).catch(err => {
             console.error('Share Target Picker error:', err);
@@ -53,11 +96,10 @@
       } catch (err) {
         console.error('LIFF Initialization failed:', err);
         alert('LIFF 初始化失敗: ' + err.toString());
-        // 初始化失敗時，也可以禁用按鈕
         const shareBtn = document.getElementById('shareBtn');
         if (shareBtn) {
-            shareBtn.textContent = 'LIFF 初始化失敗';
-            shareBtn.disabled = true;
+          shareBtn.textContent = 'LIFF 初始化失敗';
+          shareBtn.disabled = true;
         }
       }
     }
