@@ -3,22 +3,18 @@
 <html lang="zh-TW">
 <head>
   <meta charset="UTF-8">
-  <title>我的 LINE 名片</title>
+  <title>越境 Flex 名片</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
   <style>
     body { font-family: sans-serif; text-align: center; padding: 20px; }
-    .profile { border-radius: 50%; width: 120px; }
-    .btn { background: #06c755; color: white; padding: 10px 20px; font-size: 16px; border: none; border-radius: 4px; margin-top: 20px; cursor: pointer; }
-    .btn:disabled { background: #cccccc; cursor: not-allowed; }
+    .btn { background: #06c755; color: white; padding: 10px 20px; font-size: 16px;
+           border: none; border-radius: 4px; margin-top: 20px; cursor: pointer; }
   </style>
 </head>
 <body>
-  <h1>我是 Kurt Wang</h1>
-  <img class="profile" src="https://yourdomain.com/avatar.jpg" alt="Kurt 頭像">
-  <p>資深工程師 | 台灣</p>
-
-  <button class="btn" id="shareBtn" disabled>分享給好友</button>
+  <h1>越境項目分享</h1>
+  <button class="btn" id="shareBtn">分享 Flex 名片</button>
 
   <script>
     async function initializeLiff() {
@@ -26,84 +22,146 @@
         await liff.init({ liffId: "2007344981-yXozKWX0" });
 
         if (!liff.isLoggedIn()) {
-          alert('您需要登入 LINE 才能分享名片。將導向登入頁面。');
+          alert('請先登入 LINE');
           liff.login({ redirectUri: window.location.href });
           return;
         }
 
-        const shareBtn = document.getElementById('shareBtn');
-        shareBtn.disabled = false;
-
-        shareBtn.addEventListener('click', () => {
+        document.getElementById('shareBtn').addEventListener('click', () => {
           liff.shareTargetPicker([
             {
               type: "flex",
-              altText: "這是我的 LINE 名片",
+              altText: "越境項目",
               contents: {
-                type: "bubble",
-                hero: {
-                  type: "image",
-                  url: "https://yourdomain.com/avatar.jpg",
-                  size: "full",
-                  aspectRatio: "1:1",
-                  aspectMode: "cover"
-                },
-                body: {
-                  type: "box",
-                  layout: "vertical",
-                  spacing: "md",
-                  contents: [
-                    {
-                      type: "text",
-                      text: "Kurt Wang",
-                      weight: "bold",
-                      size: "xl",
-                      wrap: true
+                type: "carousel",
+                contents: [
+                  {
+                    type: "bubble",
+                    hero: {
+                      type: "image",
+                      url: "https://i.imgur.com/f9emLS9.jpg",
+                      size: "full",
+                      aspectRatio: "20:13",
+                      aspectMode: "cover"
                     },
-                    {
-                      type: "text",
-                      text: "資深工程師 | 台灣",
-                      size: "sm",
-                      color: "#888888",
-                      wrap: true
+                    body: {
+                      type: "box",
+                      layout: "vertical",
+                      spacing: "sm",
+                      contents: [
+                        {
+                          type: "text",
+                          text: "越境食旅",
+                          size: "xl",
+                          weight: "bold",
+                          color: "#000000",
+                          wrap: true
+                        },
+                        {
+                          type: "text",
+                          text: "越境食旅",
+                          size: "xs",
+                          color: "#000000",
+                          wrap: true
+                        }
+                      ]
+                    },
+                    footer: {
+                      type: "box",
+                      layout: "vertical",
+                      spacing: "sm",
+                      contents: [
+                        {
+                          type: "button",
+                          style: "primary",
+                          color: "#17c950",
+                          action: {
+                            type: "uri",
+                            label: "官網連結",
+                            uri: "https://kktl.com.tw"
+                          }
+                        },
+                        {
+                          type: "button",
+                          style: "link",
+                          color: "#42659a",
+                          action: {
+                            type: "uri",
+                            label: "Line連結",
+                            uri: "https://lin.ee/UkmS9s4"
+                          }
+                        }
+                      ]
                     }
-                  ]
-                },
-                footer: {
-                  type: "box",
-                  layout: "vertical",
-                  spacing: "sm",
-                  contents: [
-                    {
-                      type: "button",
-                      style: "primary",
-                      action: {
-                        type: "uri",
-                        label: "查看名片",
-                        uri: "https://liff.line.me/2007344981-yXozKWX0"
-                      }
+                  },
+                  {
+                    type: "bubble",
+                    hero: {
+                      type: "image",
+                      url: "https://i.imgur.com/aUymksP.jpg",
+                      size: "full",
+                      aspectRatio: "20:13",
+                      aspectMode: "cover"
+                    },
+                    body: {
+                      type: "box",
+                      layout: "vertical",
+                      spacing: "sm",
+                      contents: [
+                        {
+                          type: "text",
+                          text: "DAKA",
+                          size: "xl",
+                          weight: "bold",
+                          color: "#000000",
+                          wrap: true
+                        },
+                        {
+                          type: "text",
+                          text: "DAKA",
+                          size: "xs",
+                          color: "#000000",
+                          wrap: true
+                        }
+                      ]
+                    },
+                    footer: {
+                      type: "box",
+                      layout: "vertical",
+                      spacing: "sm",
+                      contents: [
+                        {
+                          type: "button",
+                          style: "primary",
+                          color: "#aaaaaa",
+                          action: {
+                            type: "uri",
+                            label: "官網",
+                            uri: "https://dakaclock.com/"
+                          }
+                        },
+                        {
+                          type: "button",
+                          style: "link",
+                          color: "#42659a",
+                          action: {
+                            type: "uri",
+                            label: "Line",
+                            uri: "https://lin.ee/N4hEWyH"
+                          }
+                        }
+                      ]
                     }
-                  ]
-                }
+                  }
+                ]
               }
             }
-          ]).catch(err => {
-            console.error('Share Target Picker error:', err);
-            alert('分享失敗: ' + err.toString());
-          });
+          ]).catch(err => alert("分享失敗：" + err.toString()));
         });
-
       } catch (err) {
-        console.error('LIFF Initialization failed:', err);
-        alert('LIFF 初始化失敗: ' + err.toString());
-        const shareBtn = document.getElementById('shareBtn');
-        if (shareBtn) {
-          shareBtn.textContent = 'LIFF 初始化失敗';
-          shareBtn.disabled = true;
-        }
+        alert("LIFF 初始化失敗：" + err.toString());
       }
     }
-
     initializeLiff();
   </script>
 </body>
