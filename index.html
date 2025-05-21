@@ -3,7 +3,7 @@
 <html lang="zh-TW">
 <head>
   <meta charset="UTF-8">
-  <title>越境 Flex 名片</title>
+  <title>越境 Flex 名片分享</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
   <style>
@@ -13,150 +13,165 @@
   </style>
 </head>
 <body>
-  <h1>越境項目分享</h1>
+  <h1>越境 Flex 名片分享</h1>
   <button class="btn" id="shareBtn">分享 Flex 名片</button>
 
   <script>
     async function initializeLiff() {
       try {
         await liff.init({ liffId: "2007344981-yXozKWX0" });
-
         if (!liff.isLoggedIn()) {
-          alert('請先登入 LINE');
           liff.login({ redirectUri: window.location.href });
           return;
         }
-
-        document.getElementById('shareBtn').addEventListener('click', () => {
-          liff.shareTargetPicker([
-            {
-              type: "flex",
-              altText: "越境項目",
-              contents: {
-                type: "carousel",
-                contents: [
-                  {
-                    type: "bubble",
-                    hero: {
-                      type: "image",
-                      url: "https://hackmd.io/_uploads/rktZ4ZqZxg.jpg",
-                      size: "full",
-                      aspectRatio: "20:13",
-                      aspectMode: "cover"
-                    },
-                    body: {
-                      type: "box",
-                      layout: "vertical",
-                      spacing: "sm",
-                      contents: [
-                        {
-                          type: "text",
-                          text: "越境食旅",
-                          size: "xl",
-                          weight: "bold",
-                          color: "#000000",
-                          wrap: true
-                        },
-                        {
-                          type: "text",
-                          text: "越境食旅",
-                          size: "xs",
-                          color: "#000000",
-                          wrap: true
-                        }
-                      ]
-                    },
-                    footer: {
-                      type: "box",
-                      layout: "vertical",
-                      spacing: "sm",
-                      contents: [
-                        {
-                          type: "button",
-                          style: "primary",
-                          color: "#17c950",
-                          action: {
-                            type: "uri",
-                            label: "官網連結",
-                            uri: "https://kktl.com.tw"
-                          }
-                        },
-                        {
-                          type: "button",
-                          style: "link",
-                          color: "#42659a",
-                          action: {
-                            type: "uri",
-                            label: "Line連結",
-                            uri: "https://lin.ee/UkmS9s4"
-                          }
-                        }
-                      ]
-                    }
+        document.getElementById("shareBtn").addEventListener("click", () => {
+          liff.shareTargetPicker([{
+            type: "flex",
+            altText: "越境項目",
+            contents: {
+              type: "carousel",
+              contents: [
+                {
+                  type: "bubble",
+                  hero: {
+                    type: "image",
+                    url: "https://hackmd.io/_uploads/rktZ4ZqZxg.jpg",
+                    aspectRatio: "20:13",
+                    aspectMode: "fit",
+                    size: "full",
+                    margin: "none"
                   },
-                  {
-                    type: "bubble",
-                    hero: {
-                      type: "image",
-                      url: "https://hackmd.io/_uploads/Hkt-NWcbel.jpg",
-                      size: "full",
-                      aspectRatio: "20:13",
-                      aspectMode: "cover"
-                    },
-                    body: {
-                      type: "box",
-                      layout: "vertical",
-                      spacing: "sm",
-                      contents: [
-                        {
-                          type: "text",
-                          text: "DAKA",
-                          size: "xl",
-                          weight: "bold",
-                          color: "#000000",
-                          wrap: true
-                        },
-                        {
-                          type: "text",
-                          text: "DAKA",
-                          size: "xs",
-                          color: "#000000",
-                          wrap: true
+                  body: {
+                    type: "box",
+                    layout: "vertical",
+                    spacing: "sm",
+                    contents: [
+                      {
+                        type: "text",
+                        text: "越境食旅",
+                        size: "xl",
+                        weight: "bold",
+                        color: "#000000",
+                        wrap: true,
+                        align: "center"
+                      },
+                      {
+                        type: "text",
+                        text: "專業代訂餐廳",
+                        size: "xs",
+                        color: "#000000",
+                        wrap: true,
+                        align: "center"
+                      }
+                    ]
+                  },
+                  footer: {
+                    type: "box",
+                    layout: "vertical",
+                    spacing: "sm",
+                    contents: [
+                      {
+                        type: "button",
+                        style: "primary",
+                        color: "#17c950",
+                        action: {
+                          type: "uri",
+                          label: "官網連結",
+                          uri: "https://kktl.com.tw"
                         }
-                      ]
-                    },
-                    footer: {
-                      type: "box",
-                      layout: "vertical",
-                      spacing: "sm",
-                      contents: [
-                        {
-                          type: "button",
-                          style: "primary",
-                          color: "#aaaaaa",
-                          action: {
-                            type: "uri",
-                            label: "官網",
-                            uri: "https://dakaclock.com/"
-                          }
-                        },
-                        {
-                          type: "button",
-                          style: "link",
-                          color: "#42659a",
-                          action: {
-                            type: "uri",
-                            label: "Line",
-                            uri: "https://lin.ee/N4hEWyH"
-                          }
+                      },
+                      {
+                        type: "button",
+                        style: "link",
+                        color: "#42659a",
+                        action: {
+                          type: "uri",
+                          label: "加入好友",
+                          uri: "https://lin.ee/UkmS9s4"
                         }
-                      ]
-                    }
+                      }
+                    ]
                   }
-                ]
-              }
+                },
+                {
+                  type: "bubble",
+                  header: {
+                    type: "box",
+                    layout: "vertical",
+                    contents: [
+                      {
+                        type: "text",
+                        text: "社群連結",
+                        weight: "bold",
+                        align: "center",
+                        size: "xl",
+                        margin: "md"
+                      }
+                    ]
+                  },
+                  body: {
+                    type: "box",
+                    layout: "vertical",
+                    spacing: "sm",
+                    contents: [
+                      {
+                        type: "button",
+                        style: "primary",
+                        color: "#17c950",
+                        action: {
+                          type: "uri",
+                          label: "越境訂位大群1",
+                          uri: "https://line.me/ti/g2/X5QciP2xLd39nUluwa6hnrGO1-2mEAsKsPwhJw?utm_source=invitation&utm_medium=link_copy&utm_campaign=default"
+                        }
+                      },
+                      {
+                        type: "button",
+                        style: "primary",
+                        color: "#17c950",
+                        action: {
+                          type: "uri",
+                          label: "越境訂位大群2",
+                          uri: "https://line.me/ti/g2/IVMvdWLH96RS5Nhm5akI-VKZFmGgqSckohWXFw?utm_source=invitation&utm_medium=link_copy&utm_campaign=default"
+                        }
+                      },
+                      {
+                        type: "button",
+                        style: "primary",
+                        action: {
+                          type: "uri",
+                          label: "越境聊天群",
+                          uri: "https://line.me/ti/g2/lsohhWmF0nCgNmdEcRTGEPvwEyXrBLcF2f03Ug?utm_source=invitation&utm_medium=link_copy&utm_campaign=default"
+                        }
+                      },
+                      {
+                        type: "text",
+                        text: "美食餐廳代訂",
+                        align: "center",
+                        margin: "xxl"
+                      },
+                      {
+                        type: "text",
+                        text: "首選越境食旅",
+                        align: "center"
+                      }
+                    ]
+                  },
+                  footer: {
+                    type: "box",
+                    layout: "vertical",
+                    spacing: "xs",
+                    contents: [
+                      {
+                        type: "text",
+                        text: "想吃就訂. Book your table Now.",
+                        align: "center"
+                      }
+                    ]
+                  }
+                }
+              ]
             }
-          ]).catch(err => alert("分享失敗：" + err.toString()));
+          }]).catch(err => alert("分享失敗：" + err.toString()));
         });
       } catch (err) {
         alert("LIFF 初始化失敗：" + err.toString());
