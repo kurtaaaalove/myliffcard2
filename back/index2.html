@@ -3,7 +3,7 @@
 <html lang="zh-TW">
 <head>
   <meta charset="UTF-8">
-  <title>越境 Flex 名片分享（更新版）</title>
+  <title>越境 Flex 名片分享</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
   <style>
@@ -37,10 +37,9 @@
                     type: "image",
                     url: "https://hackmd.io/_uploads/rktZ4ZqZxg.jpg",
                     aspectRatio: "20:13",
-                    size: "full",
-                    margin: "none",
                     aspectMode: "fit",
-                    offsetTop: "md"
+                    size: "full",
+                    margin: "none"
                   },
                   body: {
                     type: "box",
@@ -52,6 +51,7 @@
                         text: "越境食旅",
                         size: "xl",
                         weight: "bold",
+                        color: "#000000",
                         wrap: true,
                         align: "center"
                       },
@@ -73,6 +73,7 @@
                       {
                         type: "button",
                         style: "primary",
+                        color: "#17c950",
                         action: {
                           type: "uri",
                           label: "官網連結",
@@ -85,7 +86,7 @@
                         color: "#42659a",
                         action: {
                           type: "uri",
-                          label: "加入客服",
+                          label: "加入好友",
                           uri: "https://lin.ee/UkmS9s4"
                         }
                       }
