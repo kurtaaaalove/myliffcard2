@@ -3,7 +3,7 @@
 <html lang="zh-TW">
 <head>
   <meta charset="UTF-8">
-  <title>越境各項目 Flex 名片分享</title>
+  <title>越境項目 Flex 名片分享</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
   <style>
@@ -13,7 +13,7 @@
   </style>
 </head>
 <body>
-  <h1>越境各項目 Flex 名片分享</h1>
+  <h1>越境項目 Flex 名片分享</h1>
   <button class="btn" id="shareBtn">分享 越境食旅 名片</button>
 
   <script>
@@ -27,7 +27,7 @@
         document.getElementById("shareBtn").addEventListener("click", () => {
           liff.shareTargetPicker([{
             type: "flex",
-            altText: "越境食旅",
+            altText: "越境項目",
             contents: {
               type: "carousel",
               contents: [
@@ -40,13 +40,13 @@
                     size: "full",
                     margin: "none",
                     aspectMode: "fit",
-                    offsetTop: "md"
+                    offsetTop: "sm"
                   },
                   body: {
                     type: "box",
                     layout: "vertical",
                     spacing: "sm",
-                    offsetTop: "xl",
+                    offsetTop: "md",
                     contents: [
                       {
                         type: "text",
@@ -70,7 +70,6 @@
                     type: "box",
                     layout: "vertical",
                     spacing: "sm",
-                    offsetBottom: "none",
                     contents: [
                       {
                         type: "button",
