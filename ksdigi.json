@@ -1,0 +1,127 @@
+{
+  "type": "bubble",
+  "styles": {
+    "body": {
+      "backgroundColor": "#EBF5FB"
+    },
+    "footer": {
+      "backgroundColor": "#E0EFFF",
+      "separator": true,
+      "separatorColor": "#CFD8DC"
+    }
+  },
+  "hero": {
+    "type": "image",
+    "url": "https://hackmd.io/_uploads/S1e5kHmzxx.jpg",
+    "size": "full",
+    "aspectRatio": "16:9",
+    "aspectMode": "cover",
+    "backgroundColor": "#FFFFFF"
+  },
+  "body": {
+    "type": "box",
+    "layout": "vertical",
+    "paddingAll": "20px",
+    "spacing": "lg",
+    "contents": [
+      {
+        "type": "text",
+        "text": "KS DIGI",
+        "weight": "bold",
+        "size": "xxl",
+        "color": "#004C8C",
+        "align": "center"
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "spacing": "sm",
+        "contents": [
+          {
+            "type": "text",
+            "text": "網頁設計 / 網路行銷",
+            "weight": "bold",
+            "size": "lg",
+            "color": "#004C8C",
+            "align": "center",
+            "wrap": true
+          },
+          {
+            "type": "text",
+            "text": "E-COMMERCE",
+            "weight": "bold",
+            "size": "md",
+            "color": "#2A6FA6",
+            "align": "center",
+            "wrap": true
+          }
+        ]
+      },
+      {
+        "type": "separator",
+        "margin": "md",
+        "color": "#B0C4DE"
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "spacing": "md",
+        "margin": "lg",
+        "contents": [
+          {
+            "type": "text",
+            "text": "「擁有自己的專屬網站其實沒那麼難！」",
+            "wrap": true,
+            "size": "md",
+            "color": "#263238",
+            "align": "center",
+            "gravity": "center"
+          },
+          {
+            "type": "text",
+            "text": "「讓您的網站在茫茫大海中快速被搜尋！」",
+            "wrap": true,
+            "size": "md",
+            "color": "#263238",
+            "align": "center",
+            "gravity": "center",
+            "margin": "sm"
+          }
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "type": "box",
+    "layout": "vertical",
+    "paddingAll": "15px",
+    "spacing": "sm",
+    "contents": [
+      {
+        "type": "button",
+        "style": "primary",
+        "color": "#005A9C",
+        "action": {
+          "type": "uri",
+          "label": "前往官網",
+          "uri": "https://ks-digi.com/"
+        },
+        "height": "sm",
+        "adjustMode": "shrink-to-fit"
+      },
+      {
+        "type": "button",
+        "style": "primary",
+        "color": "#28A745",
+        "action": {
+          "type": "uri",
+          "label": "聯繫客服",
+          "uri": "https://lin.ee/HmFrdlQb"
+        },
+        "height": "sm",
+        "margin": "sm",
+        "adjustMode": "shrink-to-fit"
+      }
+    ]
+  }
+}
