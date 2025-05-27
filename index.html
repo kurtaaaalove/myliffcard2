@@ -2,20 +2,20 @@
 <html lang="zh-TW">
 <head>
   <meta charset="UTF-8">
-  <title>越境 Flex 名片 </title>
+  <title>越境 Flex 名片（風格版）</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
   <style>
     body { font-family: sans-serif; text-align: center; padding: 20px; }
     .btn { background: #06c755; color: white; padding: 10px 20px; font-size: 16px;
-           border: none; border-radius: 4px; margin-top: 20px; cursor: pointer; }
+           border: none; border-radius: 4px; margin-top: 20px; margin-left: 10px; /* Added margin-left for spacing */
+           cursor: pointer; }
   </style>
 </head>
 <body>
-  <h1>越境 Flex 名片分享</h1>
-  <button class="btn" id="shareBtn">分享 Flex 名片</button>
-
-  <script>
+  <h1>越境各項目 名片分享</h1>
+  <button class="btn" id="shareBtnKktl">越境食旅 名片</button>
+  <button class="btn" id="shareBtnDaka">DAKA 名片</button> <script>
     async function initializeLiff() {
       try {
         await liff.init({ liffId: "2007344981-yXozKWX0" }); // 請確保您的 LIFF ID 正確
@@ -23,10 +23,11 @@
           liff.login({ redirectUri: window.location.href });
           return;
         }
-        document.getElementById("shareBtn").addEventListener("click", async () => {
+
+        // 越境食旅名片按鈕事件
+        document.getElementById("shareBtnKktl").addEventListener("click", async () => {
           try {
-            // 讀取外部 JSON 檔案，檔名已更新為 kktl.json
-            const response = await fetch('kktl.json'); // <--- 修改此處
+            const response = await fetch('kktl.json');
             if (!response.ok) {
               throw new Error(`HTTP error! status: ${response.status}`);
             }
@@ -34,13 +35,33 @@
 
             liff.shareTargetPicker([{
               type: "flex",
-              altText: "越境項目",
+              altText: "越境食旅 名片",
               contents: flexMessageContents
             }]).catch(err => alert("分享失敗：" + err.toString()));
           } catch (fetchError) {
-            alert("讀取 Flex Message 內容失敗：" + fetchError.toString());
+            alert("讀取『越境食旅』Flex Message 內容失敗：" + fetchError.toString());
           }
         });
+
+        // DAKA 名片按鈕事件 <--- 新增 DAKA 按鈕的事件監聽器
+        document.getElementById("shareBtnDaka").addEventListener("click", async () => {
+          try {
+            const response = await fetch('daka.json'); // 讀取 daka.json
+            if (!response.ok) {
+              throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            const flexMessageContents = await response.json();
+
+            liff.shareTargetPicker([{
+              type: "flex",
+              altText: "DAKA 名片", // DAKA 名片的 altText
+              contents: flexMessageContents // 使用從 daka.json 讀取的內容
+            }]).catch(err => alert("分享失敗：" + err.toString()));
+          } catch (fetchError) {
+            alert("讀取『DAKA 名片』Flex Message 內容失敗：" + fetchError.toString());
+          }
+        });
+
       } catch (err) {
         alert("LIFF 初始化失敗：" + err.toString());
       }

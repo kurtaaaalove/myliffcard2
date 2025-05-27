@@ -1,0 +1,112 @@
+{
+  "type": "bubble",
+  "styles": {
+    "header": {
+      "backgroundColor": "#000000"
+    },
+    "body": {
+      "backgroundColor": "#FFFFFF",
+      "separator": true,
+      "separatorColor": "#DDDDDD"
+    },
+    "footer": {
+      "backgroundColor": "#FFFFFF",
+      "separator": true,
+      "separatorColor": "#DDDDDD"
+    }
+  },
+  "hero": {
+    "type": "image",
+    "url": "https://hackmd.io/_uploads/Hkt-NWcbel.jpg",
+    "size": "full",
+    "aspectRatio": "20:13",
+    "aspectMode": "cover",
+    "backgroundColor": "#000000"
+  },
+  "body": {
+    "type": "box",
+    "layout": "vertical",
+    "spacing": "md",
+    "contents": [
+      {
+        "type": "text",
+        "text": "DAKA打卡鐘",
+        "weight": "bold",
+        "size": "xl",
+        "color": "#000000",
+        "align": "center",
+        "wrap": true
+      },
+      {
+        "type": "text",
+        "text": "手機就是打卡鐘",
+        "weight": "bold",
+        "size": "md",
+        "color": "#333333",
+        "align": "center",
+        "wrap": true,
+        "margin": "xs"
+      },
+      {
+        "type": "separator",
+        "margin": "lg",
+        "color": "#CCCCCC"
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "margin": "lg",
+        "spacing": "sm",
+        "contents": [
+          {
+            "type": "text",
+            "text": "手機打卡好EASY，企業最佳人員管理APP！",
+            "wrap": true,
+            "color": "#555555",
+            "size": "sm",
+            "maxLines": 2
+          },
+          {
+            "type": "text",
+            "text": "直覺人性化介面，簡單操作不複雜，一條龍管理員工出缺勤，隨時查詢考勤報表；公司省事省力，員工輕鬆便利，簡單創造雙贏！",
+            "wrap": true,
+            "color": "#777777",
+            "size": "xs",
+            "maxLines": 5,
+            "margin": "md"
+          }
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "type": "box",
+    "layout": "vertical",
+    "spacing": "sm",
+    "contents": [
+      {
+        "type": "button",
+        "style": "link",
+        "height": "sm",
+        "action": {
+          "type": "uri",
+          "label": "前往官網",
+          "uri": "https://dakaclock.com/"
+        },
+        "color": "#000000"
+      },
+      {
+        "type": "button",
+        "style": "link",
+        "height": "sm",
+        "action": {
+          "type": "uri",
+          "label": "聯繫客服",
+          "uri": "https://lin.ee/EtuOI77"
+        },
+        "color": "#000000"
+      }
+    ],
+    "flex": 0
+  }
+}
