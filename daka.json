@@ -21,7 +21,7 @@
     "size": "full",
     "aspectRatio": "20:13",
     "aspectMode": "fit",
-    "backgroundColor": "#000000"
+    "backgroundColor": "#FFFFFF"
   },
   "body": {
     "type": "box",
