@@ -3,68 +3,69 @@
   "contents": [
     {
       "type": "bubble",
+      "hero": {
+        "type": "image",
+        "url": "https://hackmd.io/_uploads/H1p1_b2Wlg.png",
+        "aspectRatio": "20:13",
+        "size": "full",
+        "margin": "none",
+        "aspectMode": "fit",
+        "offsetTop": "md",
+        "backgroundColor": "#F5DEB3"
+      },
       "body": {
         "type": "box",
         "layout": "vertical",
+        "spacing": "md",
         "paddingAll": "20px",
-        "spacing": "lg",
         "contents": [
-          {
-            "type": "image",
-            "url": "https://hackmd.io/_uploads/H1p1_b2Wlg.png",
-            "size": "md",
-            "aspectMode": "fit",
-            "align": "center",
-            "margin": "none"
-          },
           {
             "type": "text",
             "text": "越境食旅",
-            "weight": "bold",
             "size": "xl",
-            "color": "#6D5C48",
+            "weight": "bold",
+            "wrap": true,
             "align": "center",
-            "margin": "md"
+            "color": "#4A3B31"
           },
           {
             "type": "text",
-            "text": "專業代訂餐廳\n快速、方便、信賴",
-            "size": "md",
-            "color": "#8C7B6A",
-            "align": "center",
+            "text": "專業代訂餐廳",
+            "size": "sm",
+            "color": "#6B5B50",
             "wrap": true,
-            "margin": "sm",
-            "lineSpacing": "4px"
+            "align": "center",
+            "margin": "xs"
           }
         ]
       },
       "footer": {
         "type": "box",
         "layout": "vertical",
-        "paddingAll": "15px",
         "spacing": "sm",
+        "paddingAll": "15px",
         "contents": [
           {
             "type": "button",
             "style": "primary",
-            "color": "#A88C6F",
             "action": {
               "type": "uri",
-              "label": "🌐 官網連結",
+              "label": "官網連結",
               "uri": "https://kktl.com.tw"
             },
+            "color": "#CD853F",
             "height": "sm",
             "adjustMode": "shrink-to-fit"
           },
           {
             "type": "button",
             "style": "primary",
-            "color": "#B89A7F",
             "action": {
               "type": "uri",
-              "label": "💬 加入客服",
+              "label": "加入客服",
               "uri": "https://lin.ee/UkmS9s4"
             },
+            "color": "#E8A66A",
             "height": "sm",
             "margin": "sm",
             "adjustMode": "shrink-to-fit"
@@ -72,13 +73,20 @@
         ]
       },
       "styles": {
+        "header": {
+          "backgroundColor": "#F5DEB3",
+          "separatorColor": "#F5DEB3"
+        },
+        "hero": {
+          "backgroundColor": "#F5DEB3"
+        },
         "body": {
-          "backgroundColor": "#F7F2E9",
-          "separator": false
+          "backgroundColor": "#F5DEB3",
+          "separatorColor": "#F5DEB3"
         },
         "footer": {
-          "backgroundColor": "#F7F2E9",
-          "separator": false
+          "backgroundColor": "#F5DEB3",
+          "separatorColor": "#F5DEB3"
         }
       }
     },
@@ -87,38 +95,38 @@
       "body": {
         "type": "box",
         "layout": "vertical",
-        "paddingAll": "20px",
         "spacing": "md",
+        "paddingAll": "20px",
         "contents": [
           {
             "type": "text",
             "text": "社群連結",
             "weight": "bold",
-            "size": "xl",
-            "color": "#6D5C48",
             "align": "center",
-            "margin": "md"
+            "size": "xl",
+            "margin": "none",
+            "color": "#4A3B31"
           },
           {
             "type": "button",
             "style": "primary",
-            "color": "#A88C6F",
+            "color": "#CD853F",
             "action": {
               "type": "uri",
-              "label": "👥 越境訂位大群1",
+              "label": "越境訂位大群1",
               "uri": "https://line.me/ti/g2/X5QciP2xLd39nUluwa6hnrGO1-2mEAsKsPwhJw?utm_source=invitation&utm_medium=link_copy&utm_campaign=default"
             },
             "height": "sm",
-            "margin": "sm",
+            "margin": "md",
             "adjustMode": "shrink-to-fit"
           },
           {
             "type": "button",
             "style": "primary",
-            "color": "#A88C6F",
+            "color": "#CD853F",
             "action": {
               "type": "uri",
-              "label": "👥 越境訂位大群2",
+              "label": "越境訂位大群2",
               "uri": "https://line.me/ti/g2/IVMvdWLH96RS5Nhm5akI-VKZFmGgqSckohWXFw?utm_source=invitation&utm_medium=link_copy&utm_campaign=default"
             },
             "height": "sm",
@@ -128,51 +136,62 @@
           {
             "type": "button",
             "style": "primary",
-            "color": "#A88C6F",
             "action": {
               "type": "uri",
-              "label": "💬 越境聊天群",
+              "label": "越境聊天群",
               "uri": "https://line.me/ti/g2/lsohhWmF0nCgNmdEcRTGEPvwEyXrBLcF2f03Ug?utm_source=invitation&utm_medium=link_copy&utm_campaign=default"
             },
+            "color": "#CD853F",
             "height": "sm",
             "margin": "sm",
             "adjustMode": "shrink-to-fit"
           },
           {
-            "type": "text",
-            "text": "美食餐廳代訂\n首選越境食旅",
-            "size": "md",
-            "color": "#8C7B6A",
-            "align": "center",
-            "wrap": true,
+            "type": "separator",
             "margin": "xl",
-            "lineSpacing": "4px"
+            "color": "#D4C0A1"
+          },
+          {
+            "type": "text",
+            "text": "美食餐廳代訂",
+            "align": "center",
+            "margin": "lg",
+            "size": "md",
+            "color": "#6B5B50"
+          },
+          {
+            "type": "text",
+            "text": "首選越境食旅",
+            "align": "center",
+            "size": "md",
+            "color": "#6B5B50",
+            "margin": "xs"
           }
         ]
       },
       "footer": {
         "type": "box",
         "layout": "vertical",
-        "paddingAll": "10px",
+        "spacing": "xs",
+        "paddingAll": "15px",
         "contents": [
           {
             "type": "text",
-            "text": "想吃就訂。Book your table Now.",
-            "size": "sm",
-            "color": "#8C7B6A",
+            "text": "想吃就訂. Book your table Now.",
             "align": "center",
+            "color": "#4A3B31",
+            "size": "sm",
             "wrap": true
           }
         ]
       },
       "styles": {
         "body": {
-          "backgroundColor": "#F7F2E9",
-          "separator": false
+          "backgroundColor": "#F5DEB3",
+          "separatorColor": "#F5DEB3"
         },
         "footer": {
-          "backgroundColor": "#F7F2E9",
-          "separator": false
+          "backgroundColor": "#F5DEB3"
         }
       }
     }
