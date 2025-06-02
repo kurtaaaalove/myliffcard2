@@ -128,7 +128,7 @@
         "color": "#007BFF",
         "action": {
           "type": "uri",
-          "label": "↪️ 分享給好友",
+          "label": "分享給好友",
           "uri": "https://liff.line.me/2007344981-byP9NanG/index.html?target=ksdigi"
         },
         "height": "sm",

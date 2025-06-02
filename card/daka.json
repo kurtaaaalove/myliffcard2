@@ -2,7 +2,7 @@
   "type": "bubble",
   "styles": {
     "header": {
-      "backgroundColor": "#000000"
+      "backgroundColor": "#FFFFFF"
     },
     "body": {
       "backgroundColor": "#D9EAD3",
@@ -108,9 +108,22 @@
           "uri": "https://lin.ee/EtuOI77"
         },
         "color": "#1A3C00",
+        "margin": "sm",
+        "adjustMode": "shrink-to-fit"
+      },
+      {
+        "type": "button",
+        "style": "primary",
+        "color": "#466D1D",
+        "action": {
+          "type": "uri",
+          "label": "分享給好友",
+          "uri": "https://liff.line.me/2007344981-byP9NanG/index.html?target=daka"
+        },
+        "height": "sm",
+        "margin": "sm",
         "adjustMode": "shrink-to-fit"
       }
-    ],
-    "flex": 0
+    ]
   }
 }

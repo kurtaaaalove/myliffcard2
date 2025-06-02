@@ -3,6 +3,10 @@
   "contents": [
     {
       "type": "bubble",
+      "styles": {
+        "body": { "backgroundColor": "#F7F2E9", "separator": false },
+        "footer": { "backgroundColor": "#F7F2E9", "separator": false }
+      },
       "body": {
         "type": "box",
         "layout": "vertical",
@@ -50,7 +54,7 @@
             "color": "#A88C6F",
             "action": {
               "type": "uri",
-              "label": "🌐 官網連結",
+              "label": "官網連結",
               "uri": "https://kktl.com.tw"
             },
             "height": "sm",
@@ -62,28 +66,35 @@
             "color": "#B89A7F",
             "action": {
               "type": "uri",
-              "label": "💬 加入客服",
+              "label": "加入客服",
               "uri": "https://lin.ee/UkmS9s4"
+            },
+            "height": "sm",
+            "margin": "sm",
+            "adjustMode": "shrink-to-fit"
+          },
+          {
+            "type": "button",
+            "style": "primary",
+            "color": "#9A795D",
+            "action": {
+              "type": "uri",
+              "label": "分享給好友",
+              "uri": "https://liff.line.me/2007344981-byP9NanG/index.html?target=kktl"
             },
             "height": "sm",
             "margin": "sm",
             "adjustMode": "shrink-to-fit"
           }
         ]
-      },
-      "styles": {
-        "body": {
-          "backgroundColor": "#F7F2E9",
-          "separator": false
-        },
-        "footer": {
-          "backgroundColor": "#F7F2E9",
-          "separator": false
-        }
       }
     },
     {
       "type": "bubble",
+      "styles": {
+        "body": { "backgroundColor": "#F7F2E9", "separator": false },
+        "footer": { "backgroundColor": "#F7F2E9", "separator": false }
+      },
       "body": {
         "type": "box",
         "layout": "vertical",
@@ -105,7 +116,7 @@
             "color": "#A88C6F",
             "action": {
               "type": "uri",
-              "label": "👥 越境訂位大群1",
+              "label": "越境訂位大群1",
               "uri": "https://line.me/ti/g2/X5QciP2xLd39nUluwa6hnrGO1-2mEAsKsPwhJw?utm_source=invitation&utm_medium=link_copy&utm_campaign=default"
             },
             "height": "sm",
@@ -118,7 +129,7 @@
             "color": "#A88C6F",
             "action": {
               "type": "uri",
-              "label": "👥 越境訂位大群2",
+              "label": "越境訂位大群2",
               "uri": "https://line.me/ti/g2/IVMvdWLH96RS5Nhm5akI-VKZFmGgqSckohWXFw?utm_source=invitation&utm_medium=link_copy&utm_campaign=default"
             },
             "height": "sm",
@@ -131,7 +142,7 @@
             "color": "#A88C6F",
             "action": {
               "type": "uri",
-              "label": "💬 越境聊天群",
+              "label": "越境聊天群",
               "uri": "https://line.me/ti/g2/lsohhWmF0nCgNmdEcRTGEPvwEyXrBLcF2f03Ug?utm_source=invitation&utm_medium=link_copy&utm_campaign=default"
             },
             "height": "sm",
@@ -154,26 +165,30 @@
         "type": "box",
         "layout": "vertical",
         "paddingAll": "10px",
+        "spacing": "sm",
         "contents": [
+          {
+            "type": "button",
+            "style": "primary",
+            "color": "#9A795D",
+            "action": {
+              "type": "uri",
+              "label": "分享給好友",
+              "uri": "https://liff.line.me/2007344981-byP9NanG/index.html?target=kktl"
+            },
+            "height": "sm",
+            "adjustMode": "shrink-to-fit"
+          },
           {
             "type": "text",
             "text": "想吃就訂。Book your table Now.",
             "size": "sm",
             "color": "#8C7B6A",
             "align": "center",
-            "wrap": true
+            "wrap": true,
+            "margin": "md"
           }
         ]
-      },
-      "styles": {
-        "body": {
-          "backgroundColor": "#F7F2E9",
-          "separator": false
-        },
-        "footer": {
-          "backgroundColor": "#F7F2E9",
-          "separator": false
-        }
       }
     }
   ]
