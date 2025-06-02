@@ -23,9 +23,9 @@
       // 越境食旅名片按鈕事件
       document.getElementById("shareBtnKktl").addEventListener("click", async () => {
         try {
-          const response = await fetch('kktl.json');
+          const response = await fetch('card/kktl.json'); // <--- 修改此處路徑
           if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status} for kktl.json`);
+            throw new Error(`HTTP error! status: ${response.status} for card/kktl.json`);
           }
           const flexMessageContents = await response.json();
           liff.shareTargetPicker([{
@@ -41,9 +41,9 @@
       // DAKA 名片按鈕事件
       document.getElementById("shareBtnDaka").addEventListener("click", async () => {
         try {
-          const response = await fetch('daka.json');
+          const response = await fetch('card/daka.json'); // <--- 修改此處路徑
           if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status} for daka.json`);
+            throw new Error(`HTTP error! status: ${response.status} for card/daka.json`);
           }
           const flexMessageContents = await response.json();
           liff.shareTargetPicker([{
@@ -59,9 +59,9 @@
       // KSDIGI 名片按鈕事件
       document.getElementById("shareBtnKsdigi").addEventListener("click", async () => {
         try {
-          const response = await fetch('ksdigi.json');
+          const response = await fetch('card/ksdigi.json'); // 路徑已是 card/ksdigi.json
           if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status} for ksdigi.json`);
+            throw new Error(`HTTP error! status: ${response.status} for card/ksdigi.json`);
           }
           const flexMessageContents = await response.json();
           liff.shareTargetPicker([{
@@ -69,9 +69,9 @@
             altText: "KSDIGI 名片",
             contents: flexMessageContents
           }]).catch(err => alert("分享失敗：" + err.toString()));
-        } catch (fetchError) { // <--- 已修正此處
+        } catch (fetchError) {
           alert("讀取『KSDIGI 名片』Flex Message 內容失敗：" + fetchError.toString());
-        } // <--- 已修正此處
+        }
       });
     }
 

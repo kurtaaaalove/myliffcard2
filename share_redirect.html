@@ -37,7 +37,7 @@
   <script>
     async function initializeShareRedirect() {
       const statusMessageElement = document.getElementById('statusMessage');
-      const liffId = "2007344981-byP9NanG"; // <--- 使用新的 LIFF ID
+      const liffId = "2007344981-byP9NanG"; // share_redirect.html 使用的 LIFF ID
 
       try {
         await liff.init({ liffId: liffId });
@@ -55,14 +55,17 @@
           return;
         }
 
-        let targetFile = shareTarget + '.json';
+        let targetFile = '';
         let altText = '';
 
         if (shareTarget === 'ksdigi') {
+          targetFile = 'card/ksdigi.json'; // <--- 路徑已是 card/
           altText = 'KSDIGI 名片';
         } else if (shareTarget === 'daka') {
+          targetFile = 'card/daka.json'; // <--- 修改此處路徑
           altText = 'DAKA 名片';
         } else if (shareTarget === 'kktl') {
+          targetFile = 'card/kktl.json'; // <--- 修改此處路徑
           altText = '越境食旅 名片';
         } else {
           statusMessageElement.textContent = '錯誤：未知的分享目標 (' + shareTarget + ')。此視窗將在3秒後關閉。';
@@ -71,8 +74,7 @@
         }
 
         statusMessageElement.textContent = `正在準備分享 ${altText}...`;
-
-        // 假設 JSON 檔案與此 HTML 在同一目錄，或可通過相對/絕對路徑訪問
+        
         const response = await fetch(targetFile); 
         if (!response.ok) {
           throw new Error(`讀取 ${targetFile} 失敗 (狀態：${response.status})`);
@@ -94,8 +96,6 @@
       } catch (err) {
         console.error("Share redirect error:", err);
         statusMessageElement.textContent = `分享過程中發生錯誤：${err.toString()}。`;
-        // 錯誤發生時，可以選擇不自動關閉視窗，以便用戶看到錯誤信息
-        // setTimeout(() => { if (liff.isInClient()) liff.closeWindow(); }, 5000);
       }
     }
     initializeShareRedirect();
