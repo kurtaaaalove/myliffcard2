@@ -69,20 +69,20 @@
             altText: "KSDIGI 名片",
             contents: flexMessageContents
           }]).catch(err => alert("分享失敗：" + err.toString()));
-        } catch (fetchError) {
+        } catch (fetchError) { // <--- 已修正此處
           alert("讀取『KSDIGI 名片』Flex Message 內容失敗：" + fetchError.toString());
-        }
+        } // <--- 已修正此處
       });
     }
 
     async function initializeLiff() {
       try {
-        await liff.init({ liffId: "2007344981-yXozKWX0" }); // 請確保您的 LIFF ID 正確
+        // index.html 使用原有的 LIFF ID
+        await liff.init({ liffId: "2007344981-yXozKWX0" }); 
         if (!liff.isLoggedIn()) {
           liff.login({ redirectUri: window.location.href });
           return;
         }
-        // 直接設定按鈕的點擊事件
         setupShareButtons();
       } catch (err) {
         alert("LIFF 初始化失敗：" + err.toString());
