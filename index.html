@@ -16,7 +16,100 @@
   <h1>越境各項目 名片分享</h1>
   <button class="btn" id="shareBtnKktl">越境食旅 名片</button>
   <button class="btn" id="shareBtnDaka">DAKA 名片</button>
-  <button class="btn" id="shareBtnKsdigi">KSDIGI名片</button> <script>
+  <button class="btn" id="shareBtnKsdigi">KSDIGI名片</button>
+
+  <script>
+    function setupShareButtons() {
+      // 越境食旅名片按鈕事件
+      document.getElementById("shareBtnKktl").addEventListener("click", async () => {
+        try {
+          const response = await fetch('kktl.json');
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status} for kktl.json`);
+          }
+          const flexMessageContents = await response.json();
+          liff.shareTargetPicker([{
+            type: "flex",
+            altText: "越境食旅 名片",
+            contents: flexMessageContents
+          }]).catch(err => alert("分享失敗：" + err.toString()));
+        } catch (fetchError) {
+          alert("讀取『越境食旅』Flex Message 內容失敗：" + fetchError.toString());
+        }
+      });
+
+      // DAKA 名片按鈕事件
+      document.getElementById("shareBtnDaka").addEventListener("click", async () => {
+        try {
+          const response = await fetch('daka.json');
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status} for daka.json`);
+          }
+          const flexMessageContents = await response.json();
+          liff.shareTargetPicker([{
+            type: "flex",
+            altText: "DAKA 名片",
+            contents: flexMessageContents
+          }]).catch(err => alert("分享失敗：" + err.toString()));
+        } catch (fetchError) {
+          alert("讀取『DAKA 名片』Flex Message 內容失敗：" + fetchError.toString());
+        }
+      });
+
+      // KSDIGI 名片按鈕事件
+      document.getElementById("shareBtnKsdigi").addEventListener("click", async () => {
+        try {
+          const response = await fetch('ksdigi.json');
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status} for ksdigi.json`);
+          }
+          const flexMessageContents = await response.json();
+          liff.shareTargetPicker([{
+            type: "flex",
+            altText: "KSDIGI 名片",
+            contents: flexMessageContents
+          }]).catch(err => alert("分享失敗：" + err.toString()));
+        } catch (fetchError) {
+          alert("讀取『KSDIGI 名片』Flex Message 內容失敗：" + fetchError.toString());
+        }
+      });
+    }
+
+    async function handleDirectShare(target) {
+      let targetFile = target + '.json';
+      let altText = '';
+
+      if (target === 'ksdigi') {
+        altText = 'KSDIGI 名片';
+      } else if (target === 'daka') {
+        altText = 'DAKA 名片';
+      } else if (target === 'kktl') {
+        altText = '越境食旅 名片';
+      } else {
+        alert('未知的分享目標：' + target);
+        liff.closeWindow(); // Or fallback to showing buttons
+        return;
+      }
+
+      try {
+        const response = await fetch(targetFile);
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status} for ${targetFile}`);
+        }
+        const flexMessageContents = await response.json();
+        
+        await liff.shareTargetPicker([{
+          type: "flex",
+          altText: altText,
+          contents: flexMessageContents
+        }]);
+        liff.closeWindow(); // 嘗試分享後關閉視窗
+      } catch (error) {
+        alert(`處理分享請求失敗：${error.toString()}`);
+        liff.closeWindow(); // 發生錯誤也嘗試關閉視窗
+      }
+    }
+
     async function initializeLiff() {
       try {
         await liff.init({ liffId: "2007344981-yXozKWX0" }); // 請確保您的 LIFF ID 正確
@@ -25,65 +118,21 @@
           return;
         }
 
-        // 越境食旅名片按鈕事件
-        document.getElementById("shareBtnKktl").addEventListener("click", async () => {
-          try {
-            const response = await fetch('kktl.json');
-            if (!response.ok) {
-              throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            const flexMessageContents = await response.json();
+        const urlParams = new URLSearchParams(window.location.search);
+        const shareAction = urlParams.get('action');
+        const shareTarget = urlParams.get('target');
 
-            liff.shareTargetPicker([{
-              type: "flex",
-              altText: "越境食旅 名片",
-              contents: flexMessageContents
-            }]).catch(err => alert("分享失敗：" + err.toString()));
-          } catch (fetchError) {
-            alert("讀取『越境食旅』Flex Message 內容失敗：" + fetchError.toString());
-          }
-        });
-
-        // DAKA 名片按鈕事件
-        document.getElementById("shareBtnDaka").addEventListener("click", async () => {
-          try {
-            const response = await fetch('daka.json');
-            if (!response.ok) {
-              throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            const flexMessageContents = await response.json();
-
-            liff.shareTargetPicker([{
-              type: "flex",
-              altText: "DAKA 名片",
-              contents: flexMessageContents
-            }]).catch(err => alert("分享失敗：" + err.toString()));
-          } catch (fetchError) {
-            alert("讀取『DAKA 名片』Flex Message 內容失敗：" + fetchError.toString());
-          }
-        });
-
-        // KSDIGI 名片按鈕事件 <--- 新增 KSDIGI 按鈕的事件監聽器
-        document.getElementById("shareBtnKsdigi").addEventListener("click", async () => {
-          try {
-            const response = await fetch('ksdigi.json'); // 讀取 ksdigi.json
-            if (!response.ok) {
-              throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            const flexMessageContents = await response.json();
-
-            liff.shareTargetPicker([{
-              type: "flex",
-              altText: "KSDIGI 名片", // KSDIGI 名片的 altText
-              contents: flexMessageContents // 使用從 ksdigi.json 讀取的內容
-            }]).catch(err => alert("分享失敗：" + err.toString()));
-          } catch (fetchError) {
-            alert("讀取『KSDIGI 名片』Flex Message 內容失敗：" + fetchError.toString());
-          }
-        });
-
+        if (shareAction === 'share' && shareTarget) {
+          document.body.innerHTML = '<h1>處理分享中...</h1>'; // 可選：顯示處理中訊息
+          await handleDirectShare(shareTarget);
+        } else {
+          // 如果不是直接分享，則設定按鈕的點擊事件
+          setupShareButtons();
+        }
       } catch (err) {
         alert("LIFF 初始化失敗：" + err.toString());
+        // 在初始化失敗時，也可能考慮隱藏按鈕或顯示錯誤訊息
+        document.body.innerHTML = '<h1>LIFF 初始化失敗</h1><p>' + err.toString() + '</p>';
       }
     }
     initializeLiff();

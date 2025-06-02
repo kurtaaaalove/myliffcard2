@@ -121,6 +121,19 @@
         "height": "sm",
         "margin": "sm",
         "adjustMode": "shrink-to-fit"
+      },
+      {
+        "type": "button",
+        "style": "primary",
+        "color": "#007BFF",
+        "action": {
+          "type": "uri",
+          "label": "↪️ 分享給好友",
+          "uri": "https://liff.line.me/2007344981-yXozKWX0?action=share&target=ksdigi"
+        },
+        "height": "sm",
+        "margin": "sm",
+        "adjustMode": "shrink-to-fit"
       }
     ]
   }
