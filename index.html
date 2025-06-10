@@ -17,15 +17,18 @@
   <button class="btn" id="shareBtnKktl">越境食旅 名片</button>
   <button class="btn" id="shareBtnDaka">DAKA 名片</button>
   <button class="btn" id="shareBtnKsdigi">KSDIGI名片</button>
-
-  <script>
+  <button class="btn" id="shareBtnKurt">王威凱 個人名片</button> <script>
     function setupShareButtons() {
+      // ⭐ JSON 檔案在新專案 cardshare 中的基礎路徑 ⭐
+      const jsonBaseUrl = 'https://kurtaaaalove.github.io/cardshare/'; 
+
       // 越境食旅名片按鈕事件
       document.getElementById("shareBtnKktl").addEventListener("click", async () => {
+        const filePath = jsonBaseUrl + 'kktl.json';
         try {
-          const response = await fetch('card/kktl.json'); // <--- 修改此處路徑
+          const response = await fetch(filePath); 
           if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status} for card/kktl.json`);
+            throw new Error(`HTTP error! status: ${response.status} for ${filePath}`);
           }
           const flexMessageContents = await response.json();
           liff.shareTargetPicker([{
@@ -40,10 +43,11 @@
 
       // DAKA 名片按鈕事件
       document.getElementById("shareBtnDaka").addEventListener("click", async () => {
+        const filePath = jsonBaseUrl + 'daka.json';
         try {
-          const response = await fetch('card/daka.json'); // <--- 修改此處路徑
+          const response = await fetch(filePath); 
           if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status} for card/daka.json`);
+            throw new Error(`HTTP error! status: ${response.status} for ${filePath}`);
           }
           const flexMessageContents = await response.json();
           liff.shareTargetPicker([{
@@ -58,10 +62,11 @@
 
       // KSDIGI 名片按鈕事件
       document.getElementById("shareBtnKsdigi").addEventListener("click", async () => {
+        const filePath = jsonBaseUrl + 'ksdigi.json';
         try {
-          const response = await fetch('card/ksdigi.json'); // 路徑已是 card/ksdigi.json
+          const response = await fetch(filePath); 
           if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status} for card/ksdigi.json`);
+            throw new Error(`HTTP error! status: ${response.status} for ${filePath}`);
           }
           const flexMessageContents = await response.json();
           liff.shareTargetPicker([{
@@ -73,11 +78,30 @@
           alert("讀取『KSDIGI 名片』Flex Message 內容失敗：" + fetchError.toString());
         }
       });
+      
+      // ⭐ 新增個人名片按鈕事件 ⭐
+      document.getElementById("shareBtnKurt").addEventListener("click", async () => {
+        const filePath = jsonBaseUrl + 'kurt.json';
+        try {
+          const response = await fetch(filePath); 
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status} for ${filePath}`);
+          }
+          const flexMessageContents = await response.json();
+          liff.shareTargetPicker([{
+            type: "flex",
+            altText: "王威凱 個人名片",
+            contents: flexMessageContents
+          }]).catch(err => alert("分享失敗：" + err.toString()));
+        } catch (fetchError) {
+          alert("讀取『王威凱 個人名片』Flex Message 內容失敗：" + fetchError.toString());
+        }
+      });
     }
 
     async function initializeLiff() {
       try {
-        // index.html 使用原有的 LIFF ID
+        // 主頁面 index.html 使用其原有的 LIFF ID
         await liff.init({ liffId: "2007344981-yXozKWX0" }); 
         if (!liff.isLoggedIn()) {
           liff.login({ redirectUri: window.location.href });

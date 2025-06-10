@@ -1,0 +1,262 @@
+{
+  "type": "carousel",
+  "contents": [
+    {
+      "type": "bubble",
+      "styles": {
+        "body": { "backgroundColor": "#F7F2E9" },
+        "footer": { "backgroundColor": "#F7F2E9", "separator": true, "separatorColor": "#EAE0D3" }
+      },
+      "body": {
+        "type": "box",
+        "layout": "vertical",
+        "paddingAll": "20px",
+        "spacing": "md",
+        "contents": [
+          {
+            "type": "box",
+            "layout": "vertical",
+            "spacing": "xs",
+            "contents": [
+              {
+                "type": "text",
+                "text": "王威凱",
+                "weight": "bold",
+                "size": "xxl",
+                "color": "#6D5C48",
+                "align": "center"
+              },
+              {
+                "type": "text",
+                "text": "CEO",
+                "size": "lg",
+                "color": "#8C7B6A",
+                "align": "center"
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "margin": "md",
+            "contents": [
+              {
+                "type": "text",
+                "text": "越境有限公司",
+                "size": "md",
+                "color": "#8C7B6A",
+                "align": "center",
+                "wrap": true
+              },
+              {
+                "type": "text",
+                "text": "統一編號: 83037480",
+                "size": "sm",
+                "color": "#B4A597",
+                "align": "center",
+                "wrap": true
+              }
+            ]
+          },
+          {
+            "type": "separator",
+            "margin": "lg",
+            "color": "#EAE0D3"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "margin": "xl",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "button",
+                "action": {
+                  "type": "uri",
+                  "label": "LineID:kurtaaaalove",
+                  "uri": "https://line.me/ti/p/~kurtaaaalove"
+                },
+                "style": "primary",
+                "color": "#A88C6F",
+                "height": "sm"
+              },
+              {
+                "type": "button",
+                "action": {
+                  "type": "uri",
+                  "label": "0953273444",
+                  "uri": "tel:0953273444"
+                },
+                "style": "primary",
+                "color": "#A88C6F",
+                "height": "sm",
+                "margin": "sm"
+              },
+              {
+                "type": "button",
+                "action": {
+                  "type": "uri",
+                  "label": "新北市鶯歌區中山路329巷16弄2號",
+                  "uri": "https://www.google.com/maps/search/?api=1&query=新北市鶯歌區中山路329巷16弄2號"
+                },
+                "style": "primary",
+                "color": "#A88C6F",
+                "height": "sm",
+                "margin": "sm",
+                "adjustMode": "shrink-to-fit" 
+              }
+            ]
+          }
+        ]
+      },
+      "footer": {
+        "type": "box",
+        "layout": "vertical",
+        "spacing": "md",
+        "contents": [
+          {
+            "type": "button",
+            "style": "primary",
+            "color": "#9A795D",
+            "action": {
+              "type": "uri",
+              "label": "分享名片",
+              "uri": "https://liff.line.me/2007344981-byP9NanG/index.html?target=kurt"
+            },
+            "height": "sm",
+            "adjustMode": "shrink-to-fit"
+          }
+        ]
+      }
+    },
+    {
+      "type": "bubble",
+      "styles": {
+        "body": { "backgroundColor": "#F7F2E9" }
+      },
+      "body": {
+        "type": "box",
+        "layout": "vertical",
+        "paddingAll": "20px",
+        "spacing": "md",
+        "contents": [
+          {
+            "type": "text",
+            "text": "我的專案連結",
+            "weight": "bold",
+            "size": "xl",
+            "color": "#6D5C48",
+            "align": "center",
+            "margin": "md"
+          },
+          {
+            "type": "separator",
+            "margin": "lg",
+            "color": "#EAE0D3"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "margin": "lg",
+            "spacing": "md",
+            "contents": [
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "spacing": "lg",
+                "alignItems": "center",
+                "action": {
+                  "type": "uri",
+                  "label": "越境食旅 (kktl)",
+                  "uri": "https://kktl.com.tw/"
+                },
+                "contents": [
+                  {
+                    "type": "image",
+                    "url": "https://ks-digi.com/image/kktl.png",
+                    "aspectMode": "cover",
+                    "size": "sm",
+                    "aspectRatio": "1:1",
+                    "flex": 1
+                  },
+                  {
+                    "type": "text",
+                    "text": "越境食旅 (kktl)",
+                    "color": "#6D5C48",
+                    "weight": "bold",
+                    "size": "md",
+                    "gravity": "center",
+                    "flex": 4,
+                    "wrap": true
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "spacing": "lg",
+                "alignItems": "center",
+                "action": {
+                  "type": "uri",
+                  "label": "數位設計 (ksdigi)",
+                  "uri": "https://ks-digi.com/"
+                },
+                "contents": [
+                  {
+                    "type": "image",
+                    "url": "https://ks-digi.com/image/KS.png",
+                    "aspectMode": "cover",
+                    "size": "sm",
+                    "aspectRatio": "1:1",
+                    "flex": 1
+                  },
+                  {
+                    "type": "text",
+                    "text": "數位設計 (ksdigi)",
+                    "color": "#6D5C48",
+                    "weight": "bold",
+                    "size": "md",
+                    "gravity": "center",
+                    "flex": 4,
+                    "wrap": true
+                  }
+                ]
+              },
+              {
+                "type": "box",
+                "layout": "horizontal",
+                "spacing": "lg",
+                "alignItems": "center",
+                "action": {
+                  "type": "uri",
+                  "label": "DAKA 打卡鐘",
+                  "uri": "https://dakaclock.com/"
+                },
+                "contents": [
+                  {
+                    "type": "image",
+                    "url": "https://ks-digi.com/image/daka.jpg",
+                    "aspectMode": "cover",
+                    "size": "sm",
+                    "aspectRatio": "1:1",
+                    "flex": 1
+                  },
+                  {
+                    "type": "text",
+                    "text": "DAKA 打卡鐘",
+                    "color": "#6D5C48",
+                    "weight": "bold",
+                    "size": "md",
+                    "gravity": "center",
+                    "flex": 4,
+                    "wrap": true
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
