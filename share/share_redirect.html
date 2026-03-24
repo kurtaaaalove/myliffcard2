@@ -59,14 +59,20 @@
         let altText = '';
 
         if (shareTarget === 'ksdigi') {
-          targetFile = '../card/ksdigi.json'; // 更新路徑
+          targetFile = '../card/ksdigi.json';
           altText = 'KSDIGI 名片';
         } else if (shareTarget === 'daka') {
-          targetFile = '../card/daka.json'; // 更新路徑
+          targetFile = '../card/daka.json';
           altText = 'DAKA 名片';
         } else if (shareTarget === 'kktl') {
-          targetFile = '../card/kktl.json'; // 更新路徑
+          targetFile = '../card/kktl.json';
           altText = '越境食旅 名片';
+        } else if (shareTarget === 'kurt') {
+          targetFile = '../card/kurt.json';
+          altText = '王威凱 個人名片';
+        } else if (shareTarget === 'diaominasia') {
+          targetFile = '../card/diaominasia.json';
+          altText = '刁民酸菜魚 名片';
         } else {
           statusMessageElement.textContent = '錯誤：未知的分享目標 (' + shareTarget + ')。此視窗將在3秒後關閉。';
           setTimeout(() => { if (liff.isInClient()) liff.closeWindow(); }, 3000);
