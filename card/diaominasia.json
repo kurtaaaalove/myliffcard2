@@ -130,6 +130,11 @@
             "type": "box",
             "layout": "horizontal",
             "spacing": "sm",
+            "action": {
+              "type": "uri",
+              "label": "Email",
+              "uri": "https://mail.google.com/mail/?view=cm&to=diaominasia@gmail.com"
+            },
             "contents": [
               {
                 "type": "text",
