@@ -173,7 +173,7 @@
         "action": {
           "type": "uri",
           "label": "傳送 Email",
-          "uri": "mailto:diaominasia@gmail.com"
+          "uri": "https://mail.google.com/mail/?view=cm&to=diaominasia@gmail.com"
         },
         "adjustMode": "shrink-to-fit"
       },
