@@ -133,6 +133,7 @@ HTML
   <button class="btn" id="shareBtnKktl">越境食旅 名片</button>
   <button class="btn" id="shareBtnDaka">DAKA 名片</button>
   <button class="btn" id="shareBtnKsdigi">KSDIGI名片</button>
+  <button class="btn" id="shareBtnDiaominasia">刁民酸菜魚 名片</button>
 
   <script>
     function setupShareButtons() {
@@ -187,6 +188,24 @@ HTML
           }]).catch(err => alert("分享失敗：" + err.toString()));
         } catch (fetchError) {
           alert("讀取『KSDIGI 名片』Flex Message 內容失敗：" + fetchError.toString());
+        }
+      });
+
+      // 刁民酸菜魚名片按鈕事件
+      document.getElementById("shareBtnDiaominasia").addEventListener("click", async () => {
+        try {
+          const response = await fetch('card/diaominasia.json');
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status} for card/diaominasia.json`);
+          }
+          const flexMessageContents = await response.json();
+          liff.shareTargetPicker([{
+            type: "flex",
+            altText: "刁民酸菜魚 名片",
+            contents: flexMessageContents
+          }]).catch(err => alert("分享失敗：" + err.toString()));
+        } catch (fetchError) {
+          alert("讀取『刁民酸菜魚 名片』Flex Message 內容失敗：" + fetchError.toString());
         }
       });
     }
