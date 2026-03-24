@@ -182,8 +182,8 @@
         "margin": "sm",
         "action": {
           "type": "uri",
-          "label": "傳送 Email",
-          "uri": "https://mail.google.com/mail/?view=cm&to=diaominasia@gmail.com"
+          "label": "撥打電話",
+          "uri": "tel:0931666619"
         },
         "adjustMode": "shrink-to-fit"
       },
