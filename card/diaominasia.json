@@ -1,0 +1,195 @@
+{
+  "type": "bubble",
+  "styles": {
+    "header": {
+      "backgroundColor": "#F5F0E8"
+    },
+    "body": {
+      "backgroundColor": "#F5F0E8"
+    },
+    "footer": {
+      "backgroundColor": "#2C3A1A",
+      "separator": true,
+      "separatorColor": "#4A5E2F"
+    }
+  },
+  "hero": {
+    "type": "image",
+    "url": "https://ks-digi.com/image/fishhero.png",
+    "size": "full",
+    "aspectRatio": "20:13",
+    "aspectMode": "cover",
+    "backgroundColor": "#F5F0E8"
+  },
+  "body": {
+    "type": "box",
+    "layout": "vertical",
+    "spacing": "md",
+    "paddingAll": "20px",
+    "contents": [
+      {
+        "type": "box",
+        "layout": "horizontal",
+        "contents": [
+          {
+            "type": "box",
+            "layout": "vertical",
+            "flex": 2,
+            "justifyContent": "center",
+            "contents": [
+              {
+                "type": "image",
+                "url": "https://ks-digi.com/image/fishlogo.png",
+                "size": "full",
+                "aspectRatio": "1:1",
+                "aspectMode": "fit"
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "flex": 3,
+            "paddingStart": "15px",
+            "spacing": "sm",
+            "justifyContent": "center",
+            "contents": [
+              {
+                "type": "text",
+                "text": "董事長",
+                "size": "sm",
+                "color": "#7A6A50",
+                "weight": "regular"
+              },
+              {
+                "type": "text",
+                "text": "黃 偉 豪",
+                "size": "xxl",
+                "weight": "bold",
+                "color": "#1A1A1A",
+                "wrap": true
+              },
+              {
+                "type": "text",
+                "text": "Casper Huang",
+                "size": "sm",
+                "color": "#7A6A50",
+                "style": "italic"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "separator",
+        "margin": "lg",
+        "color": "#C8B89A"
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "margin": "lg",
+        "spacing": "sm",
+        "contents": [
+          {
+            "type": "text",
+            "text": "刁民餐飲有限公司",
+            "size": "md",
+            "weight": "bold",
+            "color": "#2C3A1A",
+            "wrap": true
+          },
+          {
+            "type": "box",
+            "layout": "horizontal",
+            "spacing": "sm",
+            "margin": "sm",
+            "contents": [
+              {
+                "type": "text",
+                "text": "📍",
+                "size": "sm",
+                "flex": 0
+              },
+              {
+                "type": "text",
+                "text": "台中市西屯區福星路459號",
+                "size": "sm",
+                "color": "#555555",
+                "wrap": true,
+                "flex": 1
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "horizontal",
+            "spacing": "sm",
+            "contents": [
+              {
+                "type": "text",
+                "text": "✉️",
+                "size": "sm",
+                "flex": 0
+              },
+              {
+                "type": "text",
+                "text": "diaominasia@gmail.com",
+                "size": "sm",
+                "color": "#555555",
+                "wrap": true,
+                "flex": 1
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "type": "box",
+    "layout": "vertical",
+    "spacing": "sm",
+    "paddingAll": "15px",
+    "contents": [
+      {
+        "type": "button",
+        "style": "primary",
+        "height": "sm",
+        "color": "#2C3A1A",
+        "action": {
+          "type": "uri",
+          "label": "查看地圖",
+          "uri": "https://maps.google.com/?q=台中市西屯區福星路459號"
+        },
+        "adjustMode": "shrink-to-fit"
+      },
+      {
+        "type": "button",
+        "style": "primary",
+        "height": "sm",
+        "color": "#4A5E2F",
+        "margin": "sm",
+        "action": {
+          "type": "uri",
+          "label": "傳送 Email",
+          "uri": "mailto:diaominasia@gmail.com"
+        },
+        "adjustMode": "shrink-to-fit"
+      },
+      {
+        "type": "button",
+        "style": "primary",
+        "height": "sm",
+        "color": "#6B7F40",
+        "margin": "sm",
+        "action": {
+          "type": "uri",
+          "label": "分享給好友",
+          "uri": "https://liff.line.me/2007344981-byP9NanG/index.html?target=diaominasia"
+        },
+        "adjustMode": "shrink-to-fit"
+      }
+    ]
+  }
+}
