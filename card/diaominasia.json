@@ -159,8 +159,8 @@
         "color": "#2C3A1A",
         "action": {
           "type": "uri",
-          "label": "查看地圖",
-          "uri": "https://maps.google.com/?q=台中市西屯區福星路459號"
+          "label": "前往官網",
+          "uri": "https://www.diaominasia.com/index.php?lang=tw#ml-stack-nav-1"
         },
         "adjustMode": "shrink-to-fit"
       },
