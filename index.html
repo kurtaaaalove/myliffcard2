@@ -17,7 +17,9 @@
   <button class="btn" id="shareBtnKktl">越境食旅 名片</button>
   <button class="btn" id="shareBtnDaka">DAKA 名片</button>
   <button class="btn" id="shareBtnKsdigi">KSDIGI名片</button>
-  <button class="btn" id="shareBtnKurt">王威凱 個人名片</button> <script>
+  <button class="btn" id="shareBtnKurt">王威凱 個人名片</button>
+  <button class="btn" id="shareBtnDiaominasia">刁民酸菜魚 名片</button>
+  <script>
     function setupShareButtons() {
       // ⭐ JSON 檔案在新專案 cardshare 中的基礎路徑 ⭐
       const jsonBaseUrl = 'https://kurtaaaalove.github.io/cardshare/'; 
@@ -95,6 +97,25 @@
           }]).catch(err => alert("分享失敗：" + err.toString()));
         } catch (fetchError) {
           alert("讀取『王威凱 個人名片』Flex Message 內容失敗：" + fetchError.toString());
+        }
+      });
+
+      // 刁民酸菜魚名片按鈕事件
+      document.getElementById("shareBtnDiaominasia").addEventListener("click", async () => {
+        const filePath = jsonBaseUrl + 'diaominasia.json';
+        try {
+          const response = await fetch(filePath);
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status} for ${filePath}`);
+          }
+          const flexMessageContents = await response.json();
+          liff.shareTargetPicker([{
+            type: "flex",
+            altText: "刁民酸菜魚 名片",
+            contents: flexMessageContents
+          }]).catch(err => alert("分享失敗：" + err.toString()));
+        } catch (fetchError) {
+          alert("讀取『刁民酸菜魚 名片』Flex Message 內容失敗：" + fetchError.toString());
         }
       });
     }
