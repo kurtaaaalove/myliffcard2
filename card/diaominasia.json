@@ -104,6 +104,11 @@
             "layout": "horizontal",
             "spacing": "sm",
             "margin": "sm",
+            "action": {
+              "type": "uri",
+              "label": "地圖",
+              "uri": "https://maps.google.com/?q=台中市西屯區福星路459號"
+            },
             "contents": [
               {
                 "type": "text",
